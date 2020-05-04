@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--对Spring和SpringDataJPA进行配置-->
+
+
+    <!--1. 创建数据库连接池-->
+
+
+    <!--2. 配置一个JPA中非常重要的对象，entityManagerFactory
+    entityManager类似于mybatis中的sqlSession
+    -->
+
+    <!--3. 引用上面创建的entityManagerFactory-->
+
+    <!--4. 事务管理器配置-->
+
+    <!--5. 声明式事务配置-->
+
+    <!--6. 配置包扫描路径-->
+
+</beans>
