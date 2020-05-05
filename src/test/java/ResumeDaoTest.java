@@ -157,7 +157,7 @@ public class ResumeDaoTest {
 
     // 动态查询，查询单个对象
     @Test
-    public void testSpecfication(){
+    public void testSpecification(){
 
         /**
          * 动态条件封装
@@ -165,7 +165,7 @@ public class ResumeDaoTest {
          *
          * toPredicate：动态组装查询条件
          *
-         *      借助于两个参数完成条件拼装，，， select * from tb_resume where name='蓝宝宝'
+         *      借助于两个参数完成条件拼装，，， select * from resume where name='蓝宝宝'
          *      Root: 获取需要查询的对象属性
          *      CriteriaBuilder：构建查询条件，内部封装了很多查询条件（模糊查询，精准查询）
          *
@@ -173,6 +173,7 @@ public class ResumeDaoTest {
          */
 
         Specification<Resume> specification = new Specification<Resume>() {
+            // 动态组装查询条件
             @Override
             public Predicate toPredicate(Root<Resume> root, CriteriaQuery<?> criteriaQuery, CriteriaBuilder criteriaBuilder) {
                 // 获取到name属性
