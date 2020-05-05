@@ -3,7 +3,7 @@ import com.leeyaonan.pojo.Resume;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Example;
+import org.springframework.data.domain.*;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.TestPropertySource;
@@ -226,6 +226,39 @@ public class ResumeDaoTest {
         Optional<Resume> optional = resumeDao.findOne(specification);
         Resume resume = optional.get();
         System.out.println(resume);
+    }
+
+    /**
+     * 测试排序
+     */
+    @Test
+    public void testSort(){
+        Sort sort = new Sort(Sort.Direction.DESC,"id");
+        List<Resume> list = resumeDao.findAll(sort);
+        for (int i = 0; i < list.size(); i++) {
+            Resume resume =  list.get(i);
+            System.out.println(resume);
+        }
+    }
+
+
+    /**
+     * 测试分页
+     */
+    @Test
+    public void testPage(){
+        /**
+         * 第一个参数：当前查询的页数，从0开始
+         * 第二个参数：每页查询的数量
+         */
+        Pageable pageable  = PageRequest.of(0,2);
+        //Pageable pageable = new PageRequest(0,2);
+        Page<Resume> all = resumeDao.findAll(pageable);
+        System.out.println(all);
+        /*for (int i = 0; i < list.size(); i++) {
+            Resume resume =  list.get(i);
+            System.out.println(resume);
+        }*/
     }
 
 }
