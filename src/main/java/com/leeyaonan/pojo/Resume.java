@@ -29,6 +29,16 @@ public class Resume {
     @Column(name = "phone")
     private String phone;
 
+    @Override
+    public String toString() {
+        return "Resume{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", address='" + address + '\'' +
+                ", phone='" + phone + '\'' +
+                '}';
+    }
+
     public Long getId() {
         return id;
     }

@@ -1,5 +1,6 @@
 package com.leeyaonan.dao;
 
+import com.leeyaonan.pojo.Resume;
 import com.sun.xml.bind.v2.model.core.ID;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
@@ -15,6 +16,6 @@ import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
  * @Author leeyaonan
  * @Date 2020/5/5 11:18
  */
-public interface ResumeDao extends JpaRepository<T, ID>, JpaSpecificationExecutor {
+public interface ResumeDao extends JpaRepository<Resume, Long>, JpaSpecificationExecutor {
 
 }
